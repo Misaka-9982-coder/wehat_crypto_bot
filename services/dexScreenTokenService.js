@@ -10,14 +10,12 @@ export function parseDexScreenerResponse(data) {
     const pair = data.pairs[0];
     const socials = pair.info;
 
-    console.log(socials)
-
     // 社交媒体链接检查
     const socialLinks = {
-        website: socials.websites?.find(w => w.label === 'Website'),
-        tiktok: socials.websites?.find(w => w.label === 'Tiktok'),
-        twitter: socials.socials?.find(s => s.type === 'twitter'),
-        telegram: socials.socials?.find(s => s.type === 'telegram')
+        website: socials?.websites?.find(w => w.label === 'Website'),
+        tiktok: socials?.websites?.find(w => w.label === 'Tiktok'),
+        twitter: socials?.socials?.find(s => s.type === 'twitter'),
+        telegram: socials?.socials?.find(s => s.type === 'telegram')
     };
 
     return {
