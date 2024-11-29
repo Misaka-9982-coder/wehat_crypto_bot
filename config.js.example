@@ -1,0 +1,10 @@
+// config.js
+export const PROXY_CONFIG = {
+    host: '127.0.0.1',
+    port: 7890
+}
+
+export const COINGECKO_CONFIG = {
+    baseUrl: 'https://api.coingecko.com/api/v3',
+    apiKey: ''
+}

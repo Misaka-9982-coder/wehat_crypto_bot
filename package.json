@@ -1,0 +1,29 @@
+{
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@solana/web3.js": "^1.95.3",
+    "@types/web3": "^1.2.2",
+    "@wechatferry/puppet": "^0.0.21",
+    "axios": "^1.7.8",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "https-proxy-agent": "^7.0.5",
+    "web3": "^4.13.0",
+    "wechaty": "^1.20.2"
+  },
+  "name": "wechat-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
