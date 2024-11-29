@@ -1,0 +1,11 @@
+{
+  "adminUsers": [
+    "wxid_10086",
+    "wxid_10075"
+  ],
+  "whitelistRooms": [
+    "123@chatroom",
+    "234@chatroom",
+    "345@chatroom"
+  ]
+}
