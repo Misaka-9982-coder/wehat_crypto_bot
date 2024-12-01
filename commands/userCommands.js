@@ -1,6 +1,7 @@
 
 import { getCryptoPrice } from '../services/priceService.js'
 import { getGasPrices } from '../services/gasService.js'
+import { getTokenDataByName, formatTokenData } from '../services/dexScreenTokenService.js'
 
 export const userCommands = {
     '/HELP': '显示所有可用命令的帮助信息',
@@ -37,6 +38,11 @@ export async function handleUserCommand(msg, text) {
             msg.say(price)
             return true
         }
+    } else if (text.startsWith('$')) {
+        const name = text.slice(1)
+        const price = await getTokenDataByName(name)
+        msg.say(formatTokenData(price))
+        return true
     }
 
     return false

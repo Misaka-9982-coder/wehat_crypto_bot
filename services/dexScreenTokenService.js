@@ -95,6 +95,25 @@ export async function getTokenData(tokenAddress) {
     }
 }
 
+export async function getTokenDataByName(name) {
+    try {
+        const response = await axiosInstance.get(
+            `https://api.dexscreener.com/latest/dex/search?q=${name}`,
+            {
+                headers: {
+                    'Accept': 'application/json',
+                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+                }
+            }
+        );
+
+        return parseDexScreenerResponse(response.data);
+    } catch (error) {
+        console.error('获取数据失败:', error.message);
+        throw error;
+    }
+}
+
 function formatPriceChange(change) {
     if (!change) return '--'
     const value = parseFloat(change)
