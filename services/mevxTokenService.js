@@ -151,22 +151,9 @@ export async function getMevxTokenInfo(address) {
 📊 市值: ${formatUSD(token.marketCap)}
 💧 流动性: ${formatUSD(token.Liquidity)}
 ${priceChanges}
-
-👥 持有分析:
-• 持有人数: ${token.holder}
-• 前10持有: ${formatNumber(token.top10HolderPercent)}%
-• 发射进度: ${token.percent >= 100 ? '已发射' : `${token.percent.toFixed(2)}%`}
-• Dev持仓: ${token.devBuyPercent}%
-
-💹 1小时交易数据:
-• 买入: ${tradePressure.buyVolume} (${tradePressure.buyersCount}个买家)
-• 卖出: ${tradePressure.sellVolume} (${tradePressure.sellersCount}个卖家)
-• 趋势: ${tradePressure.pressure}
-
-⚠️ 风险提示:
+👥 持有人数: ${token.holder}   • 前10持有: ${formatNumber(token.top10HolderPercent)}%
+• 发射进度: ${token.percent >= 100 ? '已发射' : `${token.percent.toFixed(2)}%`}   • Dev持仓: ${token.devBuyPercent}%
 ${risks}
-
-📝 其他信息:
 • 创建时间: ${getTimeDiff(token.createTime)}
 • 社交媒体: 网站: ${token.urlInfo.website ? '✅' : '❌'} | x: ${token.urlInfo.twitter ? '✅' : '❌'} | tg: ${token.urlInfo.telegram ? '✅' : '❌'}`
 

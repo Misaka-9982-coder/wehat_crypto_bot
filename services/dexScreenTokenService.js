@@ -65,10 +65,10 @@ export function parseDexScreenerResponse(data) {
 
         // 社交媒体信息
         socials: {
-            网站: socialLinks.website ? `✅` : '❌',
-            tiktok: socialLinks.tiktok ? `✅` : '❌',
-            x: socialLinks.twitter ? `✅` : '❌',
-            tg: socialLinks.telegram ? `✅` : '❌'
+            网站: socialLinks.website ? `✅ ${socialLinks.website.url}` : '❌',
+            tiktok: socialLinks.tiktok ? `✅ ${socialLinks.tiktok.url}` : '❌',
+            x: socialLinks.twitter ? `✅ ${socialLinks.twitter.url}` : '❌',
+            tg: socialLinks.telegram ? `✅ ${socialLinks.telegram.url}` : '❌'
         },
 
         // 更新时间
@@ -125,7 +125,7 @@ function formatPriceChange(change) {
 export function formatTokenData(data) {
     const socialsString = Object.entries(data.socials)
         .map(([platform, link]) => `${platform}: ${link}`)
-        .join(' ');
+        .join('\n');
 
         // 格式化价格变动
     const priceChanges = `📈 价格变动:\n${formatPriceChange(data.priceChange5m)} 5分钟   ${formatPriceChange(data.priceChange1h)} 1小时\n${formatPriceChange(data.priceChange6h)} 6小时   ${formatPriceChange(data.priceChange24h)} 24小时`;
@@ -136,7 +136,8 @@ export function formatTokenData(data) {
 📊 市值: $${formatMarketCap(data.marketCap)}
 ${priceChanges}
 
-📱 媒体: ${socialsString}
+📱 媒体: 
+${socialsString}
 
 更新时间: ${data.timestamp}
   `.trim()
